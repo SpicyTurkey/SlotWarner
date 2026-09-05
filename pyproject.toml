@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "slotwarner"
+version = "1.0.0"
+description = "SlotWarner: source-level bit-precise storage collision detection and single-contract early warning"
+requires-python = ">=3.10"
+dependencies = [
+  "py-solc-x>=2.0,<3",
+  "semantic-version>=2.10,<3",
+  "filelock>=3.12,<4",
+]
+
+[project.scripts]
+slotwarner = "slotwarner_v4.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["slotwarner_v4*", "slotwarner_layout_validate*"]
